@@ -1,0 +1,14 @@
+services:
+  # Serviço da sua aplicação
+  app:
+    container_name: minha-app
+    # Constrói a imagem a partir do Dockerfile na raiz do projeto.
+    # Certifique-se de que você tem um Dockerfile!
+    build: .
+    # Reinicia o contêiner a menos que seja parado manualmente.
+    restart: unless-stopped
+    # Monta o diretório atual no contêiner para desenvolvimento em tempo real.
+    # Para produção, você pode remover esta linha para usar o código copiado pela imagem.
+    volumes:
+      - .:/app
+
